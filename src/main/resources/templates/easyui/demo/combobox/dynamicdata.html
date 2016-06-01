@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Load Dynamic ComboBox Data - jQuery EasyUI Demo</title>
+	<@c.easyui/>
+</head>
+<body>
+	<h2>Load Dynamic ComboBox Data</h2>
+	<p>Click the button below to load data.</p>
+	
+	<div style="margin:20px 0;">
+		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="$('#language').combobox('reload', 'combobox_data1.json')">LoadData</a>
+	</div>
+
+	<input class="easyui-combobox" id="language" name="language"
+			data-options="valueField:'id',textField:'text'">
+</body>
+</html>

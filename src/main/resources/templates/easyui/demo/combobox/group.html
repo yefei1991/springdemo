@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Group ComboBox - jQuery EasyUI Demo</title>
+	<@c.easyui/>
+</head>
+<body>
+	<h2>Group ComboBox</h2>
+	<p>This example shows how to display combobox items in groups.</p>
+	<div style="margin:20px 0">
+		<input type="checkbox" onchange="$('#cc').combobox({groupPosition:$(this).is(':checked')?'sticky':'static'})">
+		<span>Sticky Group</span>
+	</div>
+	
+	<input id="cc" class="easyui-combobox" name="browser" style="width:280px;" data-options="
+				url: '/data/combobox_data2.json',
+				method: 'get',
+				valueField:'value',
+				textField:'text',
+				groupField:'group'
+			">
+
+</body>
+</html>
