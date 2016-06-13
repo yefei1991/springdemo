@@ -20,6 +20,7 @@ public class YefeiController {
     @RequestMapping("/test")
     public String test() {
     	System.out.println(yefeiService.findAll().size()+"");
+    	System.out.println("11");
     	return "greeting";
     }
     
