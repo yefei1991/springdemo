@@ -3,6 +3,10 @@ package com.example.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Component;
 
 import com.example.dao.YefeiDao;
@@ -19,5 +23,12 @@ public class YefeiService {
 	
 	public List<Yefei> findAll(){
 		return (List<Yefei>)yefeiDao.findAll();
+	}
+	
+	public List<Yefei> findByPage(){
+		Sort s=new Sort(Direction.DESC, "id");
+		PageRequest page=new PageRequest(1,10,s);
+		Page<Yefei> yefeiPage=yefeiDao.findAll(page);
+		return yefeiPage.getContent();
 	}
 }

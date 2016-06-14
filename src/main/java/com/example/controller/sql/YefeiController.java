@@ -1,5 +1,7 @@
 package com.example.controller.sql;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,7 +22,10 @@ public class YefeiController {
     @RequestMapping("/test")
     public String test() {
     	System.out.println(yefeiService.findAll().size()+"");
-    	System.out.println("11");
+    	List<Yefei> yefeiList=yefeiService.findByPage();
+    	for(Yefei yefei:yefeiList){
+    		System.out.println(yefei.getId());
+    	}
     	return "greeting";
     }
     
