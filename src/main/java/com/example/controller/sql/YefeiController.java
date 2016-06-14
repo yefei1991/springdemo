@@ -22,7 +22,7 @@ public class YefeiController {
     @RequestMapping("/test")
     public String test() {
     	System.out.println(yefeiService.findAll().size()+"");
-    	List<Yefei> yefeiList=yefeiService.findByPage();
+    	List<Yefei> yefeiList=yefeiService.findWithCondition();
     	for(Yefei yefei:yefeiList){
     		System.out.println(yefei.getId());
     	}
